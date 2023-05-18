@@ -48,7 +48,7 @@ const Cardfood = (data, index,{navigation}) => {
             </View>
           </View>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> 
     );
 };
 const style = StyleSheet.create({
