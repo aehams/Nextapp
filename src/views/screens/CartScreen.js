@@ -1,10 +1,11 @@
-import React,{useLayoutEffect} from 'react';
+import React,{useLayoutEffect,useState} from 'react';
 import {SafeAreaView, StyleSheet, View, Text, Image,FlatList,TouchableOpacity} from 'react-native';
 import COLORS from '../../consts/colors';
 import foods from '../../consts/foods';
 import {PrimaryButton} from '../components/Button';
 
 const CartScreen = ({navigation}) => {
+  const[num,setnum]=useState(0);
   useLayoutEffect(()=>{
     navigation.setOptions({
     headerShown : false,
@@ -24,7 +25,10 @@ const CartScreen = ({navigation}) => {
         <View style={{marginRight: 20, alignItems: 'center'}}>
           <Text style={{fontWeight: 'bold', fontSize: 18}}>1</Text>
           <View style={style.actionBtn}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{
+              setnum(x+1)
+              console.log("num",num)
+            }}>
               <Image source={require('../../assets/remov.png')}style={{width:13,height:13 ,marginTop:10,marginRight:10}}/>
             </TouchableOpacity>
             <TouchableOpacity>

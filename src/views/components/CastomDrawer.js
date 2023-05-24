@@ -4,8 +4,9 @@ import{DrawerContentScrollView,DrawerItemList}from'@react-navigation/drawer'
 import COLORS from '../../consts/colors';
 import SignOut from '../navigation/Sign Out';
 import { useNavigation } from '@react-navigation/native';
-import AuthContecxt from './AuthContecxt';
-const CastomDrawer = (props,{ onPress = () => {}}) => {
+
+const CastomDrawer = (props)=> {
+    // const{login}=useContext(AuthContecxt);
     const navigation = useNavigation();
     return (
         <View style={{flex:1}}>
@@ -25,7 +26,7 @@ const CastomDrawer = (props,{ onPress = () => {}}) => {
                         <Text style={styles.text1}>Tell a Friend</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>navigation.navigate('SignOut')} style={styles.TouchableOpacity}>
+               <TouchableOpacity onPress={()=>navigation.navigate('BoarfScreen')} style={styles.TouchableOpacity}> 
                     <View style={styles.continer2}>
                         <Image source={require('../../assets/loguot.png')} style={styles.img2}/>
                         <Text style={styles.text1}>Sign Out</Text>

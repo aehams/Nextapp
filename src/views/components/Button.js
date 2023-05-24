@@ -1,6 +1,9 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 import COLORS from '../../consts/colors';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 const PrimaryButton = ({title, onPress = () => {}}) => {
   return (
@@ -11,9 +14,10 @@ const PrimaryButton = ({title, onPress = () => {}}) => {
     </TouchableOpacity>
   );
 };
+
 const SecondaryButton = ({title, onPress = () => {}}) => {
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+    <TouchableOpacity activeOpacity={0.8} onPress={()=>{}} >
       <View style={{...style.btnContainer, backgroundColor: COLORS.white}}>
         <Text style={{...style.title, color: COLORS.reed}}>{title}</Text>
       </View>

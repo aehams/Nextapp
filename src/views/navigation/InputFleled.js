@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image,SafeAreaView,TouchableOpacity,TextInput} from 'react-native';
-const InputFleled = ({label,icon,inputType,keyboardType,fieldButtonLabel,fieldButtonFunction}) => {
+const InputFleled = ({label,icon,inputType,keyboardType,fieldButtonLabel,fieldButtonFunction,value,onChangeText}) => {
     return (
         <View style={styles.continer2}>
         {/* <Image source={require('../../assets/pasword.png')} style={styles.img1}/> */}
         {icon}
         {inputType == 'password' ?
-        (<TextInput placeholder={label} keyboardType={keyboardType} secureTextEntry={true} style={styles.TextInput}/>)
+        (<TextInput placeholder={label} keyboardType={keyboardType} secureTextEntry={true} value={value} onChangeText={onChangeText} style={styles.TextInput}/>)
         :(<TextInput placeholder={label} keyboardType={keyboardType} style={styles.TextInput}/>)}
         <TouchableOpacity onPress={fieldButtonFunction}>
             <Text style={styles.text1}>{fieldButtonLabel}</Text>

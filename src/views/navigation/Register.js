@@ -1,13 +1,18 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import {View, StyleSheet, Text, Image,SafeAreaView,TouchableOpacity,TextInput, ScrollView} from 'react-native';
 import DatePicker from 'react-native-date-picker'
 import COLORS from '../../consts/colors';
 import CustomButton from './CustomButton';
 import InputFleled from './InputFleled';
+import Context from '../../Condext&&provider/Context';
 
 const Register = ({navigation}) => {
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
+    const[mail,setEmail]=useState(null);
+    const[password,setPassword]=useState(null);
+    const [name,setname]=useState(null);
+    const val = useContext(Context);
 
     return (
         <SafeAreaView style={styles.continer}>
@@ -29,17 +34,24 @@ const Register = ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                     <Text style={styles.text3}>Or, register with Email ...</Text>
+                    <Text style={styles.text}>{val}</Text>
                     <InputFleled label={'Full Name'}
                         icon={<Image source={require('../../assets/longimg/outlen.png')}style={styles.img3}/>}
                         style={styles.img1}
+                        value={name}
+                        onChangeText={text=>setname(text)}
                     />
                     <InputFleled label={'Email ID'}
                         icon={<Image source={require('../../assets/email.png')} style={styles.img1}/>}
                         keyboardType="email-address"
+                        value={mail}
+                        onChangeText={text=>setEmail(text)}
                     />
                     <InputFleled label={'password'}
                         icon={<Image source={require('../../assets/pasword.png')} style={styles.img1}/>}
                         inputType="password"
+                        value={password}
+                        onChangeText={text=>setPassword(text)}
                     />
                     <InputFleled label={'Confirm password'}
                         icon={<Image source={require('../../assets/pasword.png')} style={styles.img1}/>}

@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState } from 'react';
+import React, { useRef, useLayoutEffect, useState ,useContext} from 'react';
 import { Dimensions, Image, SafeAreaView, StyleSheet, Text, View, } from 'react-native';
 import { FlatList, ScrollView, TextInput, TouchableHighlight, TouchableOpacity, } from 'react-native';
 import COLORS from '../../consts/colors';
@@ -6,6 +6,7 @@ import categories from '../../consts/categories';
 import foods from '../../consts/foods';
 import Cardrender from '../components/Cardrender';
 import ListCategories from '../components/ListCategories';
+import Context from '../../Condext&&provider/Context';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
@@ -13,6 +14,7 @@ const cardWidth = width / 2 - 20;
 const HomeScreen = ({ navigation }) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
   const [currentSelected, setCurrentSelected] = useState([0]);
+  const {User}=useContext(Context);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -109,7 +111,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={{ marginTop: 10, flexDirection: 'row' }}>
             <Text style={{ fontSize: 30, fontWeight: 'bold', color: COLORS.reed }}>Hello,</Text>
             <Text style={{ fontSize: 28, fontWeight: '600', marginLeft: 10, color: COLORS.dark }}>
-              Ayham
+              {/* {User.name} */}
             </Text>
           </View>
           <Text style={{ marginTop: 5, fontSize: 22, color: COLORS.grey }}>

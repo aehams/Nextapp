@@ -1,18 +1,40 @@
-import React, { useState,useLayoutEffect } from 'react';
+import React, { useState,useLayoutEffect, Fragment } from 'react';
 import {SafeAreaView, StyleSheet, View, Text, Image,ScrollView,TouchableOpacity} from 'react-native';
 import COLORS from '../../consts/colors';
 import foods from '../../consts/foods';
 import {SecondaryButton} from '../components/Button';
+import Lottie from 'lottie-react-native';
 
 
 const DetailsScreen = ({navigation, route,index}) => {
   const item = route.params;
   const [currentSelected,setCurrentSelected ] = useState([0]);
+  const [show,setshow]=useState(true);
+
   useLayoutEffect(()=>{
     navigation.setOptions({
     headerShown : false,
     })
   },[])
+
+  const lotte=()=>{
+    return(
+      <Fragment>
+        <View style={{width:100,height:100,alignSelf:'center'}}>
+          {show&&(
+            <Lottie
+            source={require('../../assets/lodingcart.json')}
+            autoPlay
+            loop={false}
+            resizeMode='contain'
+            onAnimationFinish={()=>setshow(false)}
+            />
+          )}
+        </View>
+        <SecondaryButton title="Add To Cart" onPress={setshow(true)} />
+      </Fragment>
+    )
+  }
   
   return (
     <SafeAreaView style={{backgroundColor: COLORS.reed}}>
@@ -50,7 +72,21 @@ const DetailsScreen = ({navigation, route,index}) => {
           }
           </ScrollView>
           <View style={{marginTop: 20, marginBottom: 40}}>
-            <SecondaryButton title="Add To Cart" />
+          {/* <Fragment> /// pass lottie add cart
+              <View style={{width:100,height:100,alignSelf:'center'}}>
+                {show&&(
+                  <Lottie
+                  source={require('../../assets/lodingcart.json')}
+                  autoPlay
+                  loop={false}
+                  resizeMode='contain'
+                  onAnimationFinish={()=>setshow(false)}
+                  />
+                )}
+              </View>
+              <SecondaryButton title="Add To Cart" onPress={setshow(true)} />
+            </Fragment> */}
+            <SecondaryButton title="Add To Cart" onPress={()=>{}} />
           </View>
           <View style={{marginTop: -30, marginBottom: 40}}>
             <SecondaryButton title="Order Now"/>

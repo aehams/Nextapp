@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import { InterfaceOrientation } from 'react-native-reanimated';
 import HomeScreen from './HomeScreen';
-import RestorData from '../navigation/RestorData/RestorData';
+import RestorData from '../navigation/SetData/SetData';
 
 
  const LodingScreenIn  = (setIsLoading) => {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:'center',
         margin:20,
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
     },
 })
 
