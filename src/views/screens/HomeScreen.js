@@ -14,7 +14,7 @@ const cardWidth = width / 2 - 20;
 const HomeScreen = ({ navigation }) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
   const [currentSelected, setCurrentSelected] = useState([0]);
-  const {User}=useContext(Context);
+  // const {User}=useContext(Context);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,

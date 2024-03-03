@@ -7,7 +7,7 @@ import BottomNavigator from '../navigation/BottomNavigator';
 import masginScreen from './masginScreen';
 import ProfeilScreen from './profeilScreen';
 import SittingScreen from './SittingScreen';
-import CastomDrawer from './CastomDrawer';
+import CastomDrawer from '../viewDrwer/CastomDrawer';
 import COLORS from '../../consts/colors';
 
 const Drawe=createDrawerNavigator();

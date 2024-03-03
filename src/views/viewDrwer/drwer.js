@@ -6,7 +6,7 @@ import BottomNavigator from '../navigation/BottomNavigator';
 import MasginScreen from '../components/masginScreen';
 import ProfeilScreen from '../components/profeilScreen';
 import SittingScreen from '../components/SittingScreen';
-import CastomDrawer from '../components/CastomDrawer';
+import CastomDrawer from './CastomDrawer';
 
 const Drawe=createDrawerNavigator();
 const DraweNavigator = () => {
@@ -15,12 +15,6 @@ const DraweNavigator = () => {
             headerShown:true,drawerActiveBackgroundColor:'#FD1C03',drawerInactiveTintColor:COLORS.dark,drawerLabelStyle:{marginLeft:-25,fontSize:15}}} >
           <Drawe.Screen name="Home" component={BottomNavigator} options={{
             drawerIcon:({color})=>(<Image source={require('../../assets/home.png')} style={styles.img}/>)}} />
-          <Drawe.Screen name="masgin" component={MasginScreen} options={{
-            drawerIcon:({color})=>(<Image source={require('../../assets/home.png')} style={styles.img}/>)}} />
-          <Drawe.Screen name="Profeil" component={ProfeilScreen} options={{
-            drawerIcon:({color})=>(<Image source={require('../../assets/home.png')} style={styles.img}/>)}} />
-          <Drawe.Screen name="Sitting" component={SittingScreen}  options={{
-            drawerIcon:({color})=>(<Image source={require('../../assets/home.png')} style={styles.img}/>)}}/>
         </Drawe.Navigator>
   
     );

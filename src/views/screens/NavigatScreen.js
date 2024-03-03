@@ -5,7 +5,7 @@ import OnBoardScreen from './OnBoardScreen';
 import DetailsScreen from './DetailsScreen';
 import SignOut from '../navigation/Sign Out';
 import Register from '../navigation/Register';
-import DraweNavigator from './drwer';
+import DraweNavigator from '../viewDrwer/drwer';
 import LodingScreenIn from './LodingScreenIn';
 
 
