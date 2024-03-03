@@ -17,7 +17,7 @@ const HomeScreen = ({ navigation }) => {
   // const {User}=useContext(Context);
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerShown: false,
+      headerShown: true,
     })
   }, [])
 
